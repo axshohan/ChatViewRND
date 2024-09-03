@@ -26,7 +26,7 @@ public struct ChatListView: View {
                 //Message List
                 ZStack{
                     if !viewModel.items.isEmpty {
-                        ScrollViewReader { proxy in
+                        ScrollViewReader { scrollViewProxy in
                             List{
                                 ForEach(viewModel.items) { item in
                                     if(item.isSentbyMDS){
@@ -84,13 +84,14 @@ public struct ChatListView: View {
                                         .frame(maxWidth: .infinity)
                                         .padding()
                                 }
+                                .buttonStyle(PlainButtonStyle()) // Ensures only the button is clickable
                                 .listRowBackground(Color.clear)
                                 .listRowSeparator(.hidden)
                                 
                                 // Giving some space at bottom for better desing & for prevent accidental click on clear all
                                 Spacer()
-                                    .frame(height: 30)
-                                    .id("listBottom")
+                                    .frame(height: 20)
+                                    .id("bottom")
                                     .listRowBackground(Color.clear)
                                     .listRowSeparator(.hidden)
                                 
@@ -98,8 +99,18 @@ public struct ChatListView: View {
                             .listStyle(PlainListStyle())
                             .padding(0)
                             .onAppear{
-                                // Scroll to bottom
-                                proxy.scrollTo("listBottom", anchor: .bottom)
+                                withAnimation {
+                                    scrollViewProxy.scrollTo("bottom", anchor: .bottom)
+                                }
+                            }
+                            .onChange(of: viewModel.scrollToBottomRequested) { shouldScroll in
+                                if shouldScroll {
+                                    withAnimation {
+                                        scrollViewProxy.scrollTo("bottom", anchor: .bottom)
+                                    }
+                                    // Reset the request
+                                    viewModel.scrollToBottomRequested = false
+                                }
                             }
                         }
                     }

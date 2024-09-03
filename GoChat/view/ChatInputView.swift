@@ -52,7 +52,7 @@ struct ChatInputView: View {
                                         // TODO turn on Dictation recording
                                         viewModel.isDictationOn.toggle()
                                     }) {
-                                        Image(systemName: "mic")
+                                        Image("microphoneIcon")
                                             .frame(width: 163, height: 40, alignment: .center)
                                             .background(Color.midNightBlue)
                                             .cornerRadius(13)
@@ -62,7 +62,7 @@ struct ChatInputView: View {
                                         // TODO turn on Dictation recording
                                         viewModel.isDictationOn.toggle()
                                     }) {
-                                        Image(systemName: "mic")
+                                        Image("microphoneIcon")
                                             .frame(width: 163, height: 40, alignment: .center)
                                     }
                                 }
@@ -82,7 +82,7 @@ struct ChatInputView: View {
                                 }) {
                                     
                                     // TODO Have to change the image icon
-                                    Image(systemName: "keyboard.chevron.compact.down")
+                                    Image("keyboardDown")
                                 }
                             }
                         }

@@ -18,7 +18,7 @@ class ChatListViewModel: ObservableObject{
     @Published var newMessage: String = ""
     @Published var isDictationOn: Bool = false
     @Published var isChatViewExpanded: Bool = false
-
+    @Published var scrollToBottomRequested: Bool = false
     
     
     private var cancellables = Set<AnyCancellable>()
@@ -47,6 +47,7 @@ class ChatListViewModel: ObservableObject{
         if(isChatViewExpanded){
             isChatViewExpanded.toggle()
         }
+        scrollToBottomRequested = true
     }
     
     /// Delete a chat
