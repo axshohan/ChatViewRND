@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834740292C8707A40065102E /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834740282C8707A40065102E /* ChatHeaderView.swift */; };
 		83D020842C825C360053D6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020832C825C360053D6BC /* AppDelegate.swift */; };
 		83D020862C825C360053D6BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020852C825C360053D6BC /* SceneDelegate.swift */; };
 		83D020882C825C360053D6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020872C825C360053D6BC /* ViewController.swift */; };
 		83D0208B2C825C360053D6BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 83D0208A2C825C360053D6BC /* Base */; };
 		83D0208D2C825C380053D6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D0208C2C825C380053D6BC /* Assets.xcassets */; };
 		83D020902C825C380053D6BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 83D0208F2C825C380053D6BC /* Base */; };
+		83D020982C825C590053D6BC /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020972C825C580053D6BC /* SwiftUIView.swift */; };
+		83D048C22C825D5C0053D6BC /* ChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048B42C825D5C0053D6BC /* ChatItem.swift */; };
+		83D048C32C825D5C0053D6BC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048B62C825D5C0053D6BC /* Extension.swift */; };
+		83D048C42C825D5C0053D6BC /* ChatDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048B82C825D5C0053D6BC /* ChatDateView.swift */; };
+		83D048C52C825D5C0053D6BC /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048B92C825D5C0053D6BC /* ChatInputView.swift */; };
+		83D048C62C825D5C0053D6BC /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048BA2C825D5C0053D6BC /* ChatListView.swift */; };
+		83D048C72C825D5C0053D6BC /* ChatVisitTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048BB2C825D5C0053D6BC /* ChatVisitTimeView.swift */; };
+		83D048C82C825D5C0053D6BC /* ClinicianChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048BC2C825D5C0053D6BC /* ClinicianChatView.swift */; };
+		83D048C92C825D5C0053D6BC /* MDSChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048BD2C825D5C0053D6BC /* MDSChatView.swift */; };
+		83D048CA2C825D5C0053D6BC /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D048BF2C825D5C0053D6BC /* ChatListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		834740282C8707A40065102E /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		83D020802C825C360053D6BC /* ChatStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D020832C825C360053D6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D020852C825C360053D6BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +36,16 @@
 		83D0208C2C825C380053D6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83D0208F2C825C380053D6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83D020912C825C380053D6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D020972C825C580053D6BC /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		83D048B42C825D5C0053D6BC /* ChatItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatItem.swift; sourceTree = "<group>"; };
+		83D048B62C825D5C0053D6BC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		83D048B82C825D5C0053D6BC /* ChatDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDateView.swift; sourceTree = "<group>"; };
+		83D048B92C825D5C0053D6BC /* ChatInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
+		83D048BA2C825D5C0053D6BC /* ChatListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		83D048BB2C825D5C0053D6BC /* ChatVisitTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVisitTimeView.swift; sourceTree = "<group>"; };
+		83D048BC2C825D5C0053D6BC /* ClinicianChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicianChatView.swift; sourceTree = "<group>"; };
+		83D048BD2C825D5C0053D6BC /* MDSChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDSChatView.swift; sourceTree = "<group>"; };
+		83D048BF2C825D5C0053D6BC /* ChatListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +62,7 @@
 		83D020772C825C360053D6BC = {
 			isa = PBXGroup;
 			children = (
+				83D048C12C825D5C0053D6BC /* GoChat */,
 				83D020822C825C360053D6BC /* ChatStoryBoard */,
 				83D020812C825C360053D6BC /* Products */,
 			);
@@ -63,8 +86,58 @@
 				83D0208C2C825C380053D6BC /* Assets.xcassets */,
 				83D0208E2C825C380053D6BC /* LaunchScreen.storyboard */,
 				83D020912C825C380053D6BC /* Info.plist */,
+				83D020972C825C580053D6BC /* SwiftUIView.swift */,
 			);
 			path = ChatStoryBoard;
+			sourceTree = "<group>";
+		};
+		83D048B52C825D5C0053D6BC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				83D048B42C825D5C0053D6BC /* ChatItem.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		83D048B72C825D5C0053D6BC /* other */ = {
+			isa = PBXGroup;
+			children = (
+				83D048B62C825D5C0053D6BC /* Extension.swift */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		83D048BE2C825D5C0053D6BC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				83D048B82C825D5C0053D6BC /* ChatDateView.swift */,
+				83D048B92C825D5C0053D6BC /* ChatInputView.swift */,
+				83D048BA2C825D5C0053D6BC /* ChatListView.swift */,
+				83D048BB2C825D5C0053D6BC /* ChatVisitTimeView.swift */,
+				83D048BC2C825D5C0053D6BC /* ClinicianChatView.swift */,
+				83D048BD2C825D5C0053D6BC /* MDSChatView.swift */,
+				834740282C8707A40065102E /* ChatHeaderView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		83D048C02C825D5C0053D6BC /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				83D048BF2C825D5C0053D6BC /* ChatListViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		83D048C12C825D5C0053D6BC /* GoChat */ = {
+			isa = PBXGroup;
+			children = (
+				83D048B52C825D5C0053D6BC /* model */,
+				83D048B72C825D5C0053D6BC /* other */,
+				83D048BE2C825D5C0053D6BC /* view */,
+				83D048C02C825D5C0053D6BC /* viewModel */,
+			);
+			path = GoChat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +211,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D048C22C825D5C0053D6BC /* ChatItem.swift in Sources */,
+				83D048C52C825D5C0053D6BC /* ChatInputView.swift in Sources */,
 				83D020882C825C360053D6BC /* ViewController.swift in Sources */,
+				83D048CA2C825D5C0053D6BC /* ChatListViewModel.swift in Sources */,
+				83D048C82C825D5C0053D6BC /* ClinicianChatView.swift in Sources */,
+				834740292C8707A40065102E /* ChatHeaderView.swift in Sources */,
+				83D048C72C825D5C0053D6BC /* ChatVisitTimeView.swift in Sources */,
 				83D020842C825C360053D6BC /* AppDelegate.swift in Sources */,
+				83D048C62C825D5C0053D6BC /* ChatListView.swift in Sources */,
+				83D048C92C825D5C0053D6BC /* MDSChatView.swift in Sources */,
+				83D048C32C825D5C0053D6BC /* Extension.swift in Sources */,
+				83D020982C825C590053D6BC /* SwiftUIView.swift in Sources */,
+				83D048C42C825D5C0053D6BC /* ChatDateView.swift in Sources */,
 				83D020862C825C360053D6BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
