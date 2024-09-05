@@ -30,7 +30,6 @@ struct ChatInputView: View {
     
     struct ChatViewExpanded: View {
         @ObservedObject var viewModel: ChatListViewModel
-        
         let characterLimit = 180
         @State private var isFocused: Bool = false
         
@@ -38,8 +37,8 @@ struct ChatInputView: View {
             VStack{// Side space & Shadow
                 VStack { // Contain with white color
                     // Replacing TextEditor with ResizableTextView
-                    ChatTextEditor(text: $viewModel.newMessage, isFocused: $isFocused, viewModel: viewModel)
-                        .frame(height: 58) // Adjust the height to show approximately 3 lines
+                    ChatTextEditor(viewModel: viewModel, isFocused: $isFocused, characterLimit: characterLimit)
+                        .frame(height: 56)
                         .onAppear{
                             isFocused = true
                         }
@@ -63,10 +62,10 @@ struct ChatInputView: View {
                                 .frame(width: 24, height: 24)
                                 .padding(10)
                                 .background(Color.axBlue)
-                                .opacity(viewModel.newMessage.isEmpty ? 0.6 : 1.0) // Change color based on state
+                                .opacity(viewModel.isInvalidMessage() ? 0.6 : 1.0) // Change color based on state
                                 .cornerRadius(30)
                         }
-                        .disabled(viewModel.newMessage.isEmpty)
+                        .disabled(viewModel.isInvalidMessage())
                     }
                 }
                 .padding(10)

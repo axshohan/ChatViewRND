@@ -10,9 +10,10 @@ import SwiftUI
 import UIKit
 
 struct ChatTextEditor: UIViewRepresentable {
-    @Binding var text: String
-    @Binding var isFocused: Bool
+
     @ObservedObject var viewModel: ChatListViewModel
+    @Binding var isFocused: Bool
+    let characterLimit: Int
     
     class Coordinator: NSObject, UITextViewDelegate {
         var parent: ChatTextEditor
@@ -23,13 +24,13 @@ struct ChatTextEditor: UIViewRepresentable {
         
         func textViewDidChange(_ textView: UITextView) {
             // Limit the character count to 180
-            if textView.text.count > 180 {
-                textView.text = String(textView.text.prefix(180))
+            if textView.text.count > parent.characterLimit {
+                textView.text = String(textView.text.prefix(parent.characterLimit))
             }
            
             // Use DispatchQueue to safely update the Binding
             DispatchQueue.main.async {
-                self.parent.text = textView.text // Update the binding in the next run loop
+                self.parent.viewModel.newMessage = textView.text // Update the binding in the next run loop
             }
             textView.isScrollEnabled = true
             let cursorPosition = textView.selectedRange
@@ -51,7 +52,7 @@ struct ChatTextEditor: UIViewRepresentable {
         
         @objc func dismissKeyboard() {
             parent.isFocused = false
-            if(parent.text.isEmpty){
+            if(parent.viewModel.newMessage.isEmpty){
                 parent.viewModel.isChatViewExpanded = false
             }
         }
@@ -106,7 +107,7 @@ struct ChatTextEditor: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
+        uiView.text = viewModel.newMessage
         if isFocused {
             uiView.becomeFirstResponder()
         } else {

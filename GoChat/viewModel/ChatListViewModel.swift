@@ -20,8 +20,8 @@ class ChatListViewModel: ObservableObject{
     @Published var isChatViewExpanded: Bool = false
     @Published var scrollToBottomRequested: Bool = false
     
-    
     private var cancellables = Set<AnyCancellable>()
+    
     
     init() {
         print("ChatListViewModel init -> \(UUID())")
@@ -40,6 +40,11 @@ class ChatListViewModel: ObservableObject{
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
     }
+    
+    // Function to check if the message is non-empty after trimming whitespaces
+      func isInvalidMessage() -> Bool {
+          return newMessage.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+      }
     
     func onSentButtonPress(message: String){
         sendMessage(message: message)
