@@ -24,67 +24,24 @@ struct ChatInputView: View {
                         viewModel.isChatViewExpanded = true
                     }
             }
-        }.background(Color.chatbg)
+        }
+        .background(Color.chatbg)
     }
     
     struct ChatViewExpanded: View {
         @ObservedObject var viewModel: ChatListViewModel
         
         let characterLimit = 180
-        @FocusState private var isFocused: Bool
+        @State private var isFocused: Bool = false
         
         var body: some View {
-            VStack{
-                VStack {
-                    TextEditor(text: $viewModel.newMessage.limit(characterLimit))
-                        .font(.system(size: 15))
-                        .frame(minHeight: 40, maxHeight: 58) // Adjust the height to show approximately 3 lines
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .focused($isFocused)
-                        .onAppear {
-                            isFocused = true // Automatically focus the TextField when the view appears
-                        }
-                        .toolbar{
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Spacer()
-                                if viewModel.isDictationOn {
-                                    Button(action: {
-                                        // TODO turn on Dictation recording
-                                        viewModel.isDictationOn.toggle()
-                                    }) {
-                                        Image("microphoneIcon")
-                                            .frame(width: 163, height: 40, alignment: .center)
-                                            .background(Color.midNightBlue)
-                                            .cornerRadius(13)
-                                    }
-                                } else {
-                                    Button(action: {
-                                        // TODO turn on Dictation recording
-                                        viewModel.isDictationOn.toggle()
-                                    }) {
-                                        Image("microphoneIcon")
-                                            .frame(width: 163, height: 40, alignment: .center)
-                                    }
-                                }
-                                Spacer()
-                                Button(action: {
-                                    // Keyboard dismiss action
-                                    
-                                    isFocused = false
-                                    if(viewModel.isDictationOn){
-                                        viewModel.isDictationOn.toggle()
-                                    }
-                                    if viewModel.newMessage.trimmingCharacters( in:.whitespaces).isEmpty {
-                                        if(viewModel.isChatViewExpanded){
-                                            viewModel.isChatViewExpanded.toggle()
-                                        }
-                                    }
-                                }) {
-                                    
-                                    // TODO Have to change the image icon
-                                    Image("keyboardDown")
-                                }
-                            }
+            VStack{// Side space & Shadow
+                VStack { // Contain with white color
+                    // Replacing TextEditor with ResizableTextView
+                    ChatTextEditor(text: $viewModel.newMessage, isFocused: $isFocused, viewModel: viewModel)
+                        .frame(height: 58) // Adjust the height to show approximately 3 lines
+                        .onAppear{
+                            isFocused = true
                         }
                     
                     // HStack for character count and send button
@@ -95,8 +52,8 @@ struct ChatInputView: View {
                         
                         Spacer()
                         
-                        Button(action:{
-                            //Action
+                        Button(action: {
+                            // Send action
                             isFocused = false
                             viewModel.onSentButtonPress(message: viewModel.newMessage)
                         }) {
@@ -106,9 +63,10 @@ struct ChatInputView: View {
                                 .frame(width: 24, height: 24)
                                 .padding(10)
                                 .background(Color.axBlue)
-                                .opacity(viewModel.newMessage.isEmpty ? 0.6: 1.0)// Change color based on state
+                                .opacity(viewModel.newMessage.isEmpty ? 0.6 : 1.0) // Change color based on state
                                 .cornerRadius(30)
-                        }.disabled(viewModel.newMessage.isEmpty)
+                        }
+                        .disabled(viewModel.newMessage.isEmpty)
                     }
                 }
                 .padding(10)
@@ -123,17 +81,17 @@ struct ChatInputView: View {
             .padding(.bottom, 8)
         }
     }
+    
     struct InputViewSmall: View {
         @Binding var isDictationOn: Bool
         @Binding var isChatViewExpanded: Bool
         
         var body: some View {
-            VStack{
+            VStack {
                 HStack {
                     Text("Reply here...")
                         .foregroundColor(.gray)
                         .font(.system(size: 16))
-                        .foregroundColor(.black)
                         .opacity(0.4)
                         .padding(.top, 12)
                         .padding(.leading, 6)
@@ -147,7 +105,7 @@ struct ChatInputView: View {
                     }) {
                         Image(systemName: "mic")
                             .foregroundColor(.axBlue)
-                            .frame(width: 35,height: 35)
+                            .frame(width: 35, height: 35)
                             .padding(.trailing, 10)
                     }
                 }
@@ -157,14 +115,12 @@ struct ChatInputView: View {
                 .padding(.horizontal)
                 .padding(.bottom, 24)
                 .shadow(color: .black.opacity(0.1), radius: 3, x: 0, y: 3)
-                
-                
-            }.background(Color.chatbg)
-                .padding(.top, 10)
-                .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: -6)
+            }
+            .background(Color.chatbg)
+            .padding(.top, 10)
+            .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: -6)
         }
     }
-    
 }
 
 struct ChatInputViewPreview: View {
@@ -176,11 +132,7 @@ struct ChatInputViewPreview: View {
 }
 
 struct ChatInputView_Previews: PreviewProvider {
-    
     static var previews: some View {
         ChatInputViewPreview()
     }
 }
-
-
-

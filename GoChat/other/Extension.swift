@@ -8,24 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension Binding where Value == String {
-    func limit(_ length: Int) -> Binding<String> {
-        return Binding(
-            get: {
-                return self.wrappedValue
-            },
-            set: { newValue in
-                if newValue.count <= length {
-                    self.wrappedValue = newValue
-                } else {
-                    // Truncate the input to the allowed length
-                    self.wrappedValue = String(newValue.prefix(length))
-                }
-            }
-        )
-    }
-}
-
 extension Color {
     static let axBlue = Color(hex: "#175697")
     static let midNightBlue = Color(hex: "#D3DDEC")

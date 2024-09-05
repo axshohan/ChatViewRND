@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		834740292C8707A40065102E /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834740282C8707A40065102E /* ChatHeaderView.swift */; };
+		83A0273B2C89F01000840E8D /* ChatTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0273A2C89F01000840E8D /* ChatTextEditor.swift */; };
 		83D020842C825C360053D6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020832C825C360053D6BC /* AppDelegate.swift */; };
 		83D020862C825C360053D6BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020852C825C360053D6BC /* SceneDelegate.swift */; };
 		83D020882C825C360053D6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D020872C825C360053D6BC /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		834740282C8707A40065102E /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
+		83A0273A2C89F01000840E8D /* ChatTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextEditor.swift; sourceTree = "<group>"; };
 		83D020802C825C360053D6BC /* ChatStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D020832C825C360053D6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D020852C825C360053D6BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				83D048BC2C825D5C0053D6BC /* ClinicianChatView.swift */,
 				83D048BD2C825D5C0053D6BC /* MDSChatView.swift */,
 				834740282C8707A40065102E /* ChatHeaderView.swift */,
+				83A0273A2C89F01000840E8D /* ChatTextEditor.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				83D020982C825C590053D6BC /* SwiftUIView.swift in Sources */,
 				83D048C42C825D5C0053D6BC /* ChatDateView.swift in Sources */,
 				83D020862C825C360053D6BC /* SceneDelegate.swift in Sources */,
+				83A0273B2C89F01000840E8D /* ChatTextEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
